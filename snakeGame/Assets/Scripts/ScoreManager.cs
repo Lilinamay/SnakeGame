@@ -9,7 +9,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI recordText;
 
-    [SerializeField] int largeBoardThreshold;
+    //[SerializeField] int largeBoardThreshold;
 
     // our score and record can be publicly acessed outside the ScoreManager
     // class, but it can only be set INSIDE ScoreManager.
@@ -32,8 +32,8 @@ public class ScoreManager : MonoBehaviour
             record = 0;
         }
 
-        scoreText.text = 0 + "";
-        recordText.text = record + "";
+        scoreText.text = "Score: "+ 0 + "";
+        recordText.text = "Record: "+record + "";
     }
 
     public void SaveScore()
@@ -53,30 +53,26 @@ public class ScoreManager : MonoBehaviour
         ResetScore();
         PlayerPrefs.SetInt("RECORD", 0);
         record = 0;
-        recordText.text = record + "";
+        recordText.text = "Record: "+record + "";
     }
 
 
     public void ResetScore()
     {
         score = 0;
-        scoreText.text = score + "";
+        scoreText.text = "Score: "+ score + "";
     }
 
     public void IncrementScore()
     {
         score += 1;
-        scoreText.text = score + "";
+        scoreText.text = "Score: " + score + "";
         if (score > record)
         {
             record = score;
-            recordText.text = record + "";
+            recordText.text = "Record: " + record + "";
             SaveScore();
         }
 
-        if(score == largeBoardThreshold)
-        {
-            IncreaseBoardSize?.Invoke();
-        }
     }
 }

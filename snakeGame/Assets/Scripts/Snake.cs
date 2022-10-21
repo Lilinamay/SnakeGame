@@ -13,7 +13,7 @@ public class Snake : MonoBehaviour
     private Vector2 startPos;
     public int pixelDistToDetect = 20;
     private bool fingerDown;
-    float speed = 0.5f;
+    public ScoreManager scoreManager;
     private void Start()
     {
         ResetState();
@@ -163,8 +163,10 @@ public class Snake : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Food")) {
             Grow();
+            scoreManager.IncrementScore();
         } else if (other.gameObject.CompareTag("Obstacle")) {
             ResetState();
+            scoreManager.ResetScore();
         }
     }
 
