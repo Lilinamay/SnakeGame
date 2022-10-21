@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Snake.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/StartScreen.unity
     guid: cb2b60f89be0510448234db6ac0c369f
+  - enabled: 1
+    path: Assets/Scenes/Snake.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: ba1055e5f40936d49b5b2b942ad97e8d, type: 2}
